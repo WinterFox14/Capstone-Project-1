@@ -1,16 +1,12 @@
-
 pragma solidity ^0.8.20;
-
 contract EnergyTrading {
     address public owner;
     uint public tokenPrice = 1 ether; // 1 energy token = 1 ETH by default
-
     struct User {
         bool isProducer;
         bool isRegistered;
         uint energyBalance; // in energy units
     }
-
     struct Trade {
         address seller;
         address buyer;
@@ -18,10 +14,8 @@ contract EnergyTrading {
         uint pricePerUnit;
         uint timestamp;
     }
-
     mapping(address => User) public users;
     Trade[] public trades;
-
     event UserRegistered(address indexed user, bool isProducer);
     event EnergyMinted(address indexed producer, uint amount);
     event EnergyPurchased(address indexed buyer, address indexed seller, uint amount, uint pricePerUnit);
@@ -66,11 +60,9 @@ contract EnergyTrading {
 
         seller.energyBalance -= amount;
         buyer.energyBalance += amount;
-
         
         payable(from).transfer(msg.value);
 
-        
         trades.push(Trade({
             seller: from,
             buyer: msg.sender,
