@@ -1,6 +1,6 @@
-# EnergyTrading Smart Contract
+# EnergyTrading Smart Contract (Energy.sol)
 
-## Overview
+## Overview 
 The **EnergyTrading ** smart contract is designed for decentralized renewable energy trading between producers and consumers.  
 It allows producers to mint energy tokens and consumers to purchase them securely on the blockchain.
 
